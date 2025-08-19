@@ -6,6 +6,10 @@ import pkgutil
 import torch
 from typing import List, Tuple, Dict, Union
 import yaml
+from torch.serialization import add_safe_globals # added
+from _codecs import encode # added
+
+add_safe_globals([encode]) # added
 
 
 from vortex.model.generation import generate as vortex_generate
